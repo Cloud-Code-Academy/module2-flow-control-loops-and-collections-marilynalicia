@@ -14,12 +14,12 @@
 * in flow control, loops, and collections. By mastering these concepts, developers will be able to write more
 * efficient and effective code in their Salesforce projects.
 *
-* @author Your Name
+* @author Marilyn DelBosque
 */
 
 public with sharing class FlowControlLoopsCollections {
     
-    /**
+    /** Question 1
      * Compares two numbers and return "Hello World!" if x is greater than the y.
      * If either of the numbers is null or x is less than y, return null.
      * Example: helloWorld(40, 10) should return "Hello World!"
@@ -37,7 +37,7 @@ public with sharing class FlowControlLoopsCollections {
 
     }
 
-    /**
+    /** Question 2
      * Checks if a person is eligible to vote based on their age.
      * A person is eligible to vote if they are 18 years old or older.
      * If the age is less than 18, the method will return false.
@@ -46,10 +46,10 @@ public with sharing class FlowControlLoopsCollections {
      * @return true if the person is eligible to vote, false otherwise.
      */
     public static Boolean votingEligibility(Integer age) {
-        return age > 18;
+        return age >= 18;
     }
 
-    /**
+    /** Question 3
      * Finds the maximum of two numbers.
      * If both numbers are equal, it returns that number.
      * Example: findMax(58, 200) should return 200
@@ -64,13 +64,14 @@ public with sharing class FlowControlLoopsCollections {
            return null; //Would this be better as return largestNum?
         }
 
-        else {largestNum = Math.max(num1, num2);
+        else {
+            largestNum = Math.max(num1, num2);
         }
         return largestNum;
     }
 
 
-    /**
+    /** Question 4
      * Checks if a number is positive, negative, or zero.
      * If the number is null, return null.
      * Example: checkNumber(5) should return "Positive"
@@ -93,7 +94,7 @@ public with sharing class FlowControlLoopsCollections {
         return numType; // Replace null with the variable you used to store the result
     }
 
-    /**
+    /** Question 5
      * Checks if a number is even or odd.
      * If the number is null, return null.
      * Example: checkEvenOdd(2) should return "Even"
@@ -118,7 +119,7 @@ public with sharing class FlowControlLoopsCollections {
         return numType;
     }
 
-    /**
+    /** Question 6
      * Checks if a string is empty, null, or contains text.
      * Example: checkString("") should return "Empty"
      * @param a The string to check.
@@ -139,7 +140,7 @@ public with sharing class FlowControlLoopsCollections {
         return stringValue;
     }
 
-    /**
+    /** Question 7
      * Determines the grade based on the score.
      * Grade A if score is greater than or equal to 90.
      * Grade B if score is greater than or equal to 80.
@@ -155,13 +156,13 @@ public with sharing class FlowControlLoopsCollections {
         if (score >= 90) {
             letterGrade = 'A';
         }
-            else if (score >= 80 && score <=89) {
+            else if (score >= 80) {
                 letterGrade = 'B';
             } 
-            else if (score >= 70 && score <=79) {
+            else if (score >= 70) {
                 letterGrade = 'C';
             } 
-            else if (score >= 60 && score <=69) {
+            else if (score >= 60) {
                 letterGrade = 'D';
             } 
             else {
@@ -171,7 +172,7 @@ public with sharing class FlowControlLoopsCollections {
     }
 
 
-    /**
+    /** Question 8
      * Sum all the integers up to a given limit.
      * Example: sumUpToLimit(5) should return 15
      * @param intLimit The number up to which integers will be summed.
@@ -185,7 +186,7 @@ public with sharing class FlowControlLoopsCollections {
         return sum; 
     }
 
-    /**
+    /** Question 9
      * Generate String "Hello World!" three times, with each occurrence separated by a semicolon.
      * Example: returnHelloWorld() should return "Hello World!; Hello World!; Hello World!; "
      * @return The string "Hello World!; Hello World!; Hello World!; "
@@ -193,17 +194,15 @@ public with sharing class FlowControlLoopsCollections {
     public static String returnHelloWorld() {
         // Initialize the result String
         String resultString = '';
-        // Use a for loop to append 'Hello World!;' to the result string three times
-        
+        // Use a for loop to append 'Hello World!;' to the result string three times  
          for (Integer i = 1; i<=3; i++ ) {
             resultString += 'Hello World!; ';
          }
         
-
-        return resultString; // Replace null with the variable you used to store the result
+        return resultString;
     }
 
-    /**
+    /** Question 10
      * Generate a string where the input string is repeated the given number of times, with each
 	 * repetition separated by a semicolon. 
      * Do not add a semicolon after the last repetition.
@@ -222,14 +221,12 @@ public with sharing class FlowControlLoopsCollections {
             // If it is not the last iteration, add a semicolon to separate the strings
             if (i < repeatCount - 1) {
                 resultString += '; ';
-            }
-       
+            }     
         }
-        // Return the final result string
         return resultString;
     }
 
-    /**
+    /** Question 11
      * Creates a List of integers and adds the integers 1, 2, and 3 to it.
      * Example: createAndPopulateList() should return [1, 2, 3]
      * @return A List of integers containing the numbers 1, 2, and 3.
@@ -242,11 +239,10 @@ public with sharing class FlowControlLoopsCollections {
         numberList.add(2);
         numberList.add(3);
 
-        // Return the populated list
         return numberList; 
     }
 
-    /**
+    /** Question 12
      * Creates a List of integers and adds the integers from 1 to 5. Then it removes the number 3 from the list.
      * Example: createAndRemoveFromList() should return [1, 2, 4, 5]
      * @return A List of integers from 1 to 5, excluding the number 3.
@@ -260,7 +256,7 @@ public with sharing class FlowControlLoopsCollections {
         return numberList; 
     }
 
-    /**
+    /** Question 13
      * Create a list filled with integers based on the input parameter.
      * Example: createIntegerList(5) should return [1, 2, 3, 4, 5] 
      * @param n The last integer in the List.
@@ -276,7 +272,7 @@ public with sharing class FlowControlLoopsCollections {
         return numberList; 
     }
 
-    /**
+    /** Question 14
      * Remove duplicate values from the list of Strings.
      * The returned Set contains the unique strings from the input List.
      * Example: createStringSet(['a', 'b', 'a', 'c']) should return ['a', 'b', 'c']
@@ -291,7 +287,7 @@ public with sharing class FlowControlLoopsCollections {
         return stringSet; 
     }
 
-    /**
+    /** Question 15
      * Iterates over a list of integers and sums only the positive integers.
      * Example: sumPositiveIntegers() should return 12
      * @return The sum of positive integers from the list.
@@ -309,7 +305,7 @@ public with sharing class FlowControlLoopsCollections {
         return total; 
     }
 
-    /**
+    /** Question 16
      * Iterates over a list of strings and searches for a specific word. Once found, it breaks the loop.
      *  Example: findWordInList("World", ['Hello', 'World', 'Goodbye']) should return 1
      * @param wordToFind The word to find in the list.
@@ -321,15 +317,20 @@ public with sharing class FlowControlLoopsCollections {
         Integer index;
         // Loop through the list of words
             // If the current word is the word to find, exit the loop
-            for (String s: words) {
-                    index = words.indexOf(wordToFind);
+            for (Integer i = 0; i < words.size(); i++) {
+                // If the current word is the word to find, exit the loop
+                if (words[i] == wordToFind) {
+                    index = i;
+                    break;
                 }
-                // I thought I needed an if statement originally, but not necessary
-          
+                else {
+                    index = -1;
+                }
+            }
         return index; 
     }
 
-    /**
+    /** Question 17
      * Loop through the list of money and adds them up until it accumulates more than 40 and then stops counting.
      * The change values are in cents and the total is to be calculated in dollars.
      * Example: countMoney() should return 48.02
@@ -348,7 +349,7 @@ public with sharing class FlowControlLoopsCollections {
         return total;  //I also tried a do while loop, but that didn't work.
     }
 
-    /**
+    /** Question 18
      * Create a map that has five key-value pairs to the map, where the keys are the names of fruits and the values are their quantities.
      * Example: addItemsToMap() should return "Apples => 5, Oranges => 10, Bananas => 15, Pears => 20, Grapes => 25"
      * @return The Map of fruits and their quantities.
@@ -366,7 +367,7 @@ public with sharing class FlowControlLoopsCollections {
         return fruitMap; 
     }
 
-    /**
+    /** Question 19
      * Create a map where the keys are the names of employees and the values are their salaries.
      * Then returns the salary of the employee whose name is specified.
      * Example: getSalary("John Doe") should return 50000
@@ -385,7 +386,7 @@ public with sharing class FlowControlLoopsCollections {
         return salary;
     }
 
-    /**
+    /** Question 20
      * Create a map where the keys are the names of employees and the values are their salaries.
      * Then, iterates over the map and checks if an employee's salary is more than 55000.
      * If it is, add the employee's name to a list of employees that is returned by the method.
